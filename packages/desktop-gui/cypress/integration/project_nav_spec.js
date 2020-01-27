@@ -128,13 +128,13 @@ describe('Project Nav', function () {
               return b.displayName !== 'Chrome'
             })
 
-            let family = dropdownBrowsers[i].family
+            let name = dropdownBrowsers[i].name
 
-            family = family === 'electron' ? 'chrome' : family
+            name = name === 'electron' ? 'chrome' : name
 
             // first one is shown in selection, so skip first
             cy.wrap($i).should('have.class',
-              `fa-${family}`)
+              `fa-${name}`)
           })
         })
 
@@ -234,7 +234,7 @@ describe('Project Nav', function () {
           ])
 
           expect(browserArg.path).to.include('/')
-          expect(browserArg.family).to.equal('chrome')
+          expect(browserArg.family).to.equal('chromium')
         })
 
         describe('stop browser', function () {
@@ -346,7 +346,7 @@ describe('Project Nav', function () {
           {
             'name': 'chromium',
             'displayName': 'Chromium',
-            'family': 'chrome',
+            'family': 'chromium',
             'version': '49.0.2609.0',
             'path': '/Users/bmann/Downloads/chrome-mac/Chromium.app/Contents/MacOS/Chromium',
             'majorVersion': '49',
